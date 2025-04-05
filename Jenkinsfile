@@ -26,6 +26,7 @@ pipeline {
                         terraform plan
                         terraform apply -auto-approve
                         '''
+                    }
                 }
             }
         }
