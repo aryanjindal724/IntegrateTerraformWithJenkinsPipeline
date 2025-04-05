@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "p4gDf+18LSCaq/QaYcFPpUlPqEKqLsUuKPQhnTAhzVY=",
+  "Source": "WebAppIntegratedJenkinsAndTerraform",
+  "BasePath": "_content/WebAppIntegratedJenkinsAndTerraform",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
