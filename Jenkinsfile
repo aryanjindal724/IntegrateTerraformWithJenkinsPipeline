@@ -18,6 +18,7 @@ pipeline {
         stage('Run Terraform Script') {
             steps {
                 dir('Terraform_module') {
+                    bat 'az login'
                     bat 'terraform init'
                     bat 'terraform validate'
                     bat 'terraform plan'
