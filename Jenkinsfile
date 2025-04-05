@@ -20,8 +20,8 @@ pipeline {
                 dir('Terraform_module') {
                     bat 'terraform init'
                     bat 'terraform validate'
-                    bat 'terraform plan -out=tfplan'
-                    bat 'terraform apply -auto-approve tfplan'
+                    bat 'terraform plan'
+                    bat 'terraform apply -auto-approve'
                 }
             }
         }
