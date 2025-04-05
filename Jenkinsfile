@@ -18,11 +18,14 @@ pipeline {
         stage('Run Terraform Script') {
             steps {
                 dir('Terraform_module') {
-                    bat 'az login'
-                    bat 'terraform init'
-                    bat 'terraform validate'
-                    bat 'terraform plan'
-                    bat 'terraform apply -auto-approve'
+                    withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
+                        bat '''
+                        az login --service-principal -u %AZURE_CLIENT_ID% -p %AZURE_CLIENT_SECRET% --tenant %AZURE_TENANT_ID%
+                        terraform init
+                        terraform validate
+                        terraform plan
+                        terraform apply -auto-approve
+                        '''
                 }
             }
         }
